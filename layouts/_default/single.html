@@ -51,7 +51,7 @@
 					<span>{{ i18n "translation" . }}: </span>
 					{{ range .Translations }}
 						<a href="{{ .Permalink }}">
-              				<img src="{{ print "/images/flags/" .Lang ".png" | absURL }}" />
+              				<img src="{{ print "/img/flags/" .Lang ".png" | absURL }}" />
               				{{ .Lang }}
 						</a>
 					{{ end }}

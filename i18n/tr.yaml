@@ -1,0 +1,26 @@
+- id: home
+  translation: "Ana Sayfa"
+- id: tag
+  translation: "Etiketler"
+- id: copyright
+  translation: "Tüm hakları saklıdır."
+- id: more
+  translation: "Daha Fazla"
+- id: "translation"
+  translation: "Çeviriler"
+- id: "readTime"
+  translation: "dk okuma."
+- id: "readMore"
+  translation: "Daha fazla oku..."
+- id: "author"
+  translation: "Tarafından"
+- id: "top"
+  translation: "En Üste..."
+- id: "toc"
+  translation: "İçerikler"
+- id: "old"
+  translation: "Eski"
+- id: "new"
+  translation: "Yeni"
+- id: "series"
+  translation: "`<a href=\"%s\">%s</a>` serisindeki diğer makaleler"

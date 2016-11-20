@@ -6,14 +6,28 @@
 	  <img src="{{.Site.Params.sidebarphoto}}" class="sidebarphoto">
 	{{ end }}
 
-    {{ if .Site.Params.sidebartitle }}<h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1>{{ end }}
+    {{ if .Site.Params.sidebartagline }}<h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1>{{ end }}
     {{ if .Site.Params.sidebartagline }}<h2 class="brand-tagline">{{ .Site.Params.sidebartagline }}</h2>{{ end }}
 
     <nav class="nav">
-      <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ .Site.BaseURL }}">Home</a></li>
+      <ul class="nav-list" >
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ "/" | absLangURL }}">{{ i18n "home" . }}</a></li>
         {{ range .Site.Menus.main }}
           <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        {{ range $.Site.Params.languages }}
+          <li class="nav-item">
+              {{ if eq .name $.Site.Language.Lang }}
+                <span>{{ .name }}</span>
+              {{ else }}
+                <a href="{{ .href | absURL }}">{{ .name }}</a>
+              {{ end }}
+          </li>
         {{ end }}
       </ul>
     </nav>

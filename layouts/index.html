@@ -36,7 +36,7 @@
                 {{ if .Params.categories }}
                 <div class="post-categories">
                     {{ range .Params.categories }}
-                    <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL }}/categories/{{ . | urlize }}">{{ . }}</a>
+                    <a class="post-category post-category-{{ . | urlize }}" href="{{ print "/categories/" (. | urlize) | absLangURL }}">{{ . }}</a>
                     {{ end }}
                 </div>
                 {{ end }}
@@ -46,7 +46,7 @@
                   {{ .Summary }}
               </article>
               <div class="read-more-link">
-                  <a href="{{ .RelPermalink }}"><span class="read-more-slashes">//</span>Read More...</a>
+                  <a href="{{ .RelPermalink }}"><span class="read-more-slashes">//</span>{{ i18n "readMore" . }}</a>
               </div>
             {{ else }}
               {{ .Content }}

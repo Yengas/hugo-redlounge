@@ -27,16 +27,17 @@
 		          </span>
       				{{ end }}
       				{{ if not .Params.noauthor }}
-      					{{ if .Params.author }}By <a class="post-author" {{ if .Params.authorlink }}href="{{ .Params.authorlink }}"{{ end }}>{{ .Params.author }}</a>{{ end }}
+      					{{ if .Params.author }}{{ i18n "author" . }} <a class="post-author" {{ if .Params.authorlink }}href="{{ .Params.authorlink }}"{{ end }}>{{ .Params.author }}</a>{{ end }}
       				{{ end }}
               {{ if not .Params.noread }}
-                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>{{.ReadingTime}} min. read</em></span>
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>{{.ReadingTime}} {{ i18n "readTime" . }}</em></span>
               {{ end }}
+
       				{{ if .Params.categories }}
       					<div class="post-categories">
 				        {{ $Site := .Site }}
       					{{ range .Params.categories }}
-					        <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
+					        <a class="post-category post-category-{{ . | urlize }}" href="{{ print "/categories/" (. | urlize) | absLangURL }}">{{ . }}</a>
       					{{ end }}
       					</div>
       				{{ end }}
@@ -46,7 +47,7 @@
             	{{ .Summary }}
               </article>
 			  <div class="read-more-link">
-				<a href="{{ .RelPermalink }}"><span class="read-more-slashes">//</span>Read More...</a>
+				<a href="{{ .RelPermalink }}"><span class="read-more-slashes">//</span>{{ i18n "readMore" . }}</a>
 			  </div>
             {{ else }}
               {{ .Content }}

@@ -1,0 +1,26 @@
+- id: home
+  translation: "Home"
+- id: tag
+  translation: "Tags"
+- id: copyright
+  translation: "All rights reserved."
+- id: more
+  translation: "More Reading"
+- id: "translation"
+  translation: "Translations"
+- id: "readTime"
+  translation: "min read."
+- id: "readMore"
+  translation: "Read more..."
+- id: "author"
+  translation: "By"
+- id: "top"
+  translation: "To Top..."
+- id: "toc"
+  translation: "Contents"
+- id: "old"
+  translation: "Older"
+- id: "new"
+  translation: "Newer"
+- id: "series"
+  translation: "Other posts in the `<a href=\"%s\">%s</a>` series"
